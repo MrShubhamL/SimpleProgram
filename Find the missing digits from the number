@@ -1,0 +1,38 @@
+// Find the missing digits between 1 to 10 number which the number entered by user.
+
+// e.g. number entered by user: 357   ---------> Result - Missing Digits: 1 2 4 6 8 9 10
+
+
+
+
+
+#include<stdio.h>
+int main()
+{
+    int num,i,flag,temp,rem;
+    printf("Enter the number: ");
+    scanf("%d",&num);
+    temp=num;
+
+    printf("\n Missing digits: ");
+    for(i=1;i<=10;i++)
+    {
+        flag = 0;
+        num = temp;
+        while(num!=0)
+        {
+            rem=num%10;
+            if(rem==i)
+            {
+                flag = 1;
+                break;
+            }
+            num = num/10;
+        }
+        if(flag==0)
+        {
+            printf("%5d",i);
+        }
+    }
+    return 0;
+}
